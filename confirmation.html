@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>You're registered | WHAM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -26,6 +27,7 @@
     background:hsl(var(--bg));
     color:hsl(var(--fg));
     font-family:"Inter Tight",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
   .card{
     width:100%;
@@ -36,15 +38,12 @@
     border-radius:10px;
     padding:48px 32px;
   }
-  .brand{
-    margin:0;
-    font-size:44px;
-    font-weight:300;
-    letter-spacing:.04em;
-    color:hsl(var(--primary));
-    line-height:1;
+  .wordmark{
+    display:block;
+    width:min(190px,55vw);
+    height:auto;
+    margin:0 auto;
   }
-  .brand sup{font-size:12px;vertical-align:super}
   h1{margin:28px 0 8px;font-size:28px;font-weight:600}
   .lede{margin:0 0 28px;font-size:15px;line-height:1.6;color:hsl(var(--muted))}
   .cal-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
@@ -71,7 +70,6 @@
   .foot strong{color:hsl(var(--fg))}
   @media (max-width:420px){
     .card{padding:36px 22px}
-    .brand{font-size:36px}
     h1{font-size:24px}
     .cal-btn{width:100%}
   }
@@ -79,7 +77,7 @@
 </head>
 <body>
   <main class="card">
-    <p class="brand">WHAM<sup>®</sup></p>
+    <img class="wordmark" src="assets/wham-logo.png" alt="WHAM">
     <h1>You're registered</h1>
     <p class="lede">We look forward to seeing you on January 12 for the program and reception, 2:00–6:00 PM Pacific Time.</p>
 
@@ -99,7 +97,7 @@
       </a>
     </div>
 
-    <p class="foot"><strong>ABOUT WHAM:</strong> <a href="https://whamnow.org">WHAMNOW.ORG</a></p>
+    <p class="foot"><strong>ABOUT WHAM:</strong> <a href="https://whamnow.org" target="_blank" rel="noopener">WHAMNOW.ORG</a></p>
   </main>
 </body>
 </html>
