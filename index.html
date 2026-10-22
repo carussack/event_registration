@@ -110,6 +110,7 @@
     width:100%;
     height:auto;
     border-radius:.375rem;
+    mix-blend-mode:multiply;
   }
   .main{
     max-width:42rem;
@@ -129,6 +130,27 @@
     height:1150px;
     border:0;
   }
+
+  .cta{padding:2.5rem 1.5rem;text-align:center}
+  .cta h2{margin:0;font-size:1.5rem;font-weight:600}
+  .cta p{margin:.5rem 0 1.5rem;font-size:.9rem;color:hsl(var(--muted))}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 1.75rem;
+    border-radius:6px;
+    background:hsl(var(--primary));
+    color:#fff;
+    font-size:.95rem;
+    font-weight:500;
+    text-decoration:none;
+    transition:filter .15s ease;
+  }
+  .btn:hover,.btn:focus-visible{filter:brightness(1.12);outline:none}
+  [hidden]{display:none!important}
+  
   .fallback{
     margin:0;
     padding:0 1.25rem 1.25rem;
@@ -153,6 +175,7 @@
   }
 </style>
 </head>
+  
 <body>
   <header class="hero">
     <div class="hero-inner">
@@ -184,5 +207,15 @@
 
     <p class="about"><strong>ABOUT WHAM:</strong> <a href="https://whamnow.org" target="_blank" rel="noopener">WHAMNOW.ORG</a></p>
   </main>
+   <script>
+    (function () {
+      var iframe = document.querySelector('#form-embed iframe');
+      var src = iframe.getAttribute('src') || '';
+      if (/^https?:/i.test(src) && src.indexOf('YOUR_WORKFORM') === -1) {
+        document.getElementById('form-cta').hidden = true;
+        document.getElementById('form-embed').hidden = false;
+      }
+    })();
+  </script>
 </body>
 </html>
